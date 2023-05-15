@@ -8,13 +8,37 @@
 </head>
 <body>
 
-
+    <h1>Calculadora cumplaños</h1>
     <input type="date" id="birthdayInput">
     <button id="calculateButton">Calcular días restantes</button>
     <p id="result"></p>
 
     <hr>
-    
+
+    <h1>Calculadora de Potencia</h1>
+  
+  <label for="baseInput">Número base:</label>
+  <input type="number" id="baseInput"><br>
+  
+  <label for="exponenteInput">Exponente:</label>
+  <input type="number" id="exponenteInput"><br>
+  
+  <button onclick="calcularPotencia()">Calcular</button>
+  
+  <p id="resultado"></p>
+  <hr>
+  
+  <h1>Búsqueda en Array</h1>
+   <!-- Barra de búsqueda -->
+   <label for="searchInput">Buscar:</label>
+   <input type="text" id="searchInput" oninput="buscarContenido()">
+   <button id="searchButton">Buscar</button>
+   <!-- Resultados de búsqueda -->
+
+   <p id="resultadoBusqueda"></p>
+
+
+
 </body>
 <script src="script.js"></script>
 </html>
