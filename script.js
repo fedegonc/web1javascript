@@ -44,39 +44,35 @@ function calcularPotencia() {
 }
 
 
-   // Array de datos
+// Obtener el elemento del resultado de búsqueda
+const resultadoBusqueda = document.getElementById("resultadoBusqueda");
 
+// Obtener el elemento del input de búsqueda y del botón de búsqueda
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
 
-// script.js
-
-// Obtener los elementos del DOM
-var searchInput = document.getElementById("searchInput");
-var resultadoBusqueda = document.getElementById("resultadoBusqueda");
-
-// Asignar el evento de búsqueda al input
+// Agregar el evento de búsqueda al botón y al input (puede ser opcional)
+searchButton.addEventListener("click", buscarContenido);
 searchInput.addEventListener("input", buscarContenido);
 
+// Función para buscar el contenido en el array
 function buscarContenido() {
   // Obtener el valor de búsqueda ingresado por el usuario
-  var busqueda = searchInput.value;
+  const busqueda = searchInput.value.toLowerCase();
 
   // Array de elementos en los que se realizará la búsqueda
-  var array = ['Teste', 'Passe', 'Leite', 'Café', 'HTML', 'JAVA', 'JS', 'CSS', 'Casa'];
+  const array = ['Teste', 'Passe', 'Leite', 'Café', 'HTML', 'JAVA', 'JS', 'CSS', 'Casa'];
 
-  // Variable para almacenar los resultados de búsqueda
-  var resultados = [];
-
-  // Realizar la búsqueda en el array
-  for (var i = 0; i < array.length; i++) {
-    if (array[i].includes(busqueda)) {
-      resultados.push(array[i]);
-    }
-  }
+  // Realizar la búsqueda en el array usando el método filter()
+  const resultados = array.filter(elemento => elemento.toLowerCase().includes(busqueda));
 
   // Mostrar los resultados de búsqueda
-  resultadoBusqueda.textContent = "Resultados: " + resultados.join(", ");
+  if (resultados.length > 0) {
+    resultadoBusqueda.textContent = "Resultados: " + resultados.join(", ");
+  } else {
+    resultadoBusqueda.textContent = "No se encontraron resultados.";
+  }
 }
-
 
 
 
